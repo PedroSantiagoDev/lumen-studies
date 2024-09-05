@@ -26,4 +26,12 @@ class Todo extends Model
             'done_at' => Carbon::now()
         ]);
     }
+
+    public function undone(): void
+    {
+        $this->update([
+            'done' => false,
+            'done_at' => null
+        ]);
+    }
 }
